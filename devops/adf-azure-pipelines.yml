@@ -1,0 +1,17 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+
+- stage: BUILD
+  jobs:
+  - template: adf-build-job.yml
+    parameters:
+      subscriptionId: e7dd3e69-345a-4440-a14b-c862e239bd12
+      resourceGroupName: Dp203NCI
+      dataFactoryName: DEV-ADF-ag
+      repoRootFolder: /data-factory/
+      packageJsonFolder: /devops/
